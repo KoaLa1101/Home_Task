@@ -1,0 +1,7 @@
+.idea
+.out
+inf-hw.iml
+.test.txt
+
+# Project exclude paths
+/out/
