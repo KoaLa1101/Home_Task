@@ -1,7 +1,7 @@
 .idea
 .out
 inf-hw.iml
-.test.txt
+test.txt
 
 # Project exclude paths
 /out/
