@@ -16,9 +16,10 @@ public class Main {
         for (Student student : arr1)
             System.out.println(student);
 
+        // Ex9
         try (StudentDataOutputStream out = new StudentDataOutputStream(new FileOutputStream("test.txt"));
              StudentDataInputStream in = new StudentDataInputStream(new FileInputStream("test.txt"))) {
-            Student s1 = new Student("qwe", "r", 't', 1,2,3);
+            Student s1 = new Student("Rinat A.", "11-902", 'M', 2001,11,22);
             out.writeStudent(s1);
             Student s2 = in.readStudent();
             System.out.println("Name: " + s2.getName() + "\n"

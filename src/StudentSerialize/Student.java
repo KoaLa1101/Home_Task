@@ -7,6 +7,7 @@ import java.io.Serializable;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Objects;
 
 public class Student implements Serializable {
     private String name, group;
@@ -44,14 +45,6 @@ public class Student implements Serializable {
 
     public int getBirthDay() {
         return birthDay;
-    }
-
-    @Override
-    public String toString() {
-        return "Name: " + name + "\n"
-                + "Group: " + group + "\n"
-                + "gender: " + gender + "\n"
-                + "Birthday: " + birthDay + "." + birthMonth + "." + birthYear + "\n";
     }
 
     public static void serialize(Collection<Student> students, String way) {
@@ -118,5 +111,31 @@ public class Student implements Serializable {
             e.printStackTrace();
         }
         return null;
+    }
+
+    @Override
+    public String toString() {
+        return "Name: " + name + "\n"
+                + "Group: " + group + "\n"
+                + "gender: " + gender + "\n"
+                + "Birthday: " + birthDay + "." + birthMonth + "." + birthYear + "\n";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Student)) return false;
+        Student student = (Student) o;
+        return getGender() == student.getGender() &&
+                getBirthDay() == student.getBirthDay() &&
+                getBirthMonth() == student.getBirthMonth() &&
+                getBirthYear() == student.getBirthYear() &&
+                getName().equals(student.getName()) &&
+                getGroup().equals(student.getGroup());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getName(), getGroup(), getGender(), getBirthDay(), getBirthMonth(), getBirthYear());
     }
 }
