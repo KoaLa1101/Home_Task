@@ -54,15 +54,15 @@ public class Student implements Serializable {
             out.write(buffer.array());
 
             for (Student student : students) {
-                int nameLen = student.getName().getBytes().length;
-                int groupLen = student.getGroup().getBytes().length;
+                int nSize = student.getName().getBytes().length;
+                int gSize = student.getGroup().getBytes().length;
                 buffer = ByteBuffer.allocate(8);
-                buffer.putInt(nameLen);
-                buffer.putInt(groupLen);
+                buffer.putInt(nSize);
+                buffer.putInt(gSize);
                 out.write(buffer.array());
                 out.flush();
 
-                buffer = ByteBuffer.allocate(14 + nameLen + groupLen);
+                buffer = ByteBuffer.allocate(14 + nSize + gSize);  // Korjick suggested the idea
                 buffer.put(student.getName().getBytes());
                 buffer.put(student.getGroup().getBytes());
                 buffer.putChar(student.getGender());
@@ -83,13 +83,11 @@ public class Student implements Serializable {
             ByteBuffer buffer = ByteBuffer.allocate(4);
             in.read(buffer.array());
             int size = buffer.getInt();
-
             ArrayList<Student> students = new ArrayList<>();
             for (int i = 0; i < size; i++) {
                 buffer = ByteBuffer.allocate(4);
                 in.read(buffer.array());
                 byte[] name = new byte[buffer.getInt()];
-
                 buffer = ByteBuffer.allocate(4);
                 in.read(buffer.array());
                 byte[] group = new byte[buffer.getInt()];
@@ -98,13 +96,7 @@ public class Student implements Serializable {
                 in.read(name);
                 in.read(group);
                 in.read(buffer.array());
-                students.add(new Student(
-                        new String(name),
-                        new String(group),
-                        buffer.getChar(),
-                        buffer.getInt(),
-                        buffer.getInt(),
-                        buffer.getInt()));
+                students.add(new Student( new String(name), new String(group), buffer.getChar(), buffer.getInt(), buffer.getInt(), buffer.getInt()));
             }
             return students;
         } catch (IOException e) {
