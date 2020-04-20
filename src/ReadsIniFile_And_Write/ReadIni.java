@@ -1,6 +1,4 @@
-package ReadsIniFile;
-
-import jdk.nashorn.internal.ir.WhileNode;
+package ReadsIniFile_And_Write;
 
 import java.io.BufferedReader;
 import java.io.IOException;

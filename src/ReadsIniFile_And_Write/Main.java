@@ -1,4 +1,4 @@
-package ReadsIniFile;
+package ReadsIniFile_And_Write;
 
 import java.io.FileReader;
 import java.io.IOException;
