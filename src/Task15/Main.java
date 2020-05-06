@@ -1,11 +1,8 @@
 package Task15;
 
 import java.awt.*;
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.*;
-import java.nio.file.attribute.BasicFileAttributes;
-import java.util.Objects;
 import java.util.Scanner;
 
 public class Main {
@@ -37,25 +34,6 @@ public class Main {
                 } else {
                     System.out.println("Input path");
                 }
-            }
-            if (line[0].equals("dir")) {
-                File fileList = new File(path.toString());
-                BasicFileAttributes obj;
-
-                System.out.println("[ <--------");
-                for (File file : Objects.requireNonNull(fileList.listFiles())) {
-                    obj = Files.readAttributes(file.toPath(), BasicFileAttributes.class);
-                    System.out.println(file.getName() + ":");
-                    System.out.println("    creationTime: " + obj.creationTime());
-                    System.out.println("    lastAccessTime: " + obj.lastAccessTime());
-                    System.out.println("    lastModifiedTime: " + obj.lastModifiedTime());
-                    System.out.println("    isDirectory: " + obj.isDirectory());
-                    System.out.println("    isOther: " + obj.isOther());
-                    System.out.println("    isRegularFile: " + obj.isRegularFile());
-                    System.out.println("    isSymbolicLink: " + obj.isSymbolicLink());
-                    System.out.println("    size: " + obj.size());
-                }
-                System.out.println("--------> ]");
             }
             if (line[0].equals("run")) {
                 if (line.length > 1) {
