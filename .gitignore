@@ -2,6 +2,8 @@
 .out
 inf-hw.iml
 test.txt
+web.html
+
 
 # Project exclude paths
 /out/
