@@ -13,13 +13,12 @@ public class Main {
             BufferedReader br = new BufferedReader(new FileReader(Paths.get("").resolve("play.txt").toString()));
             bw.write(txt);
             bw.flush();
-            Piano piano = new Piano();
             String read = br.readLine();
             for (char c : read.toCharArray()) {
-                if (piano.keys.containsKey(c+"")){
-                    piano.
+                if (Keys.containsKey(c+"")){
+                    new Piano(Keys.get(String.valueOf(c+""))).start();
                 }
-                Thread.sleep(500);
+                Thread.sleep(400);
             }
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();

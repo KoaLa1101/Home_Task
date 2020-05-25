@@ -10,23 +10,12 @@ import javazoom.jl.player.Player;
 
 public class Piano extends Thread {
     public static String nameTrack;
-    public static HashMap<String, String> keys;
 
-
-    public Piano() {
-        keys = new HashMap<>();
-        keys.put("a", "do.mp3");
-        keys.put("b", "re.mp3");
-        keys.put("c", "mi.mp3");
-        keys.put("d", "fa.mp3");
-        keys.put("e", "sol.mp3");
-        keys.put("f", "lja.mp3");
-        keys.put("g", "si.mp3");
+    public Piano(String track) {
+        nameTrack = track;
     }
 
-    public void Track(String nameTrack){
-        this.nameTrack = nameTrack;
-    }
+
 
     public void run() {
         try {

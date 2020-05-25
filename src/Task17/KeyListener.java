@@ -17,13 +17,13 @@ public class KeyListener extends JFrame implements java.awt.event.KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_A) new Piano(Piano.keys.get("a")).start();
-        if (e.getKeyCode() == KeyEvent.VK_B) new Piano(Piano.keys.get("b")).start();
-        if (e.getKeyCode() == KeyEvent.VK_C) new Piano(Piano.keys.get("c")).start();
-        if (e.getKeyCode() == KeyEvent.VK_D) new Piano(Piano.keys.get("d")).start();
-        if (e.getKeyCode() == KeyEvent.VK_E) new Piano(Piano.keys.get("e")).start();
-        if (e.getKeyCode() == KeyEvent.VK_F) new Piano(Piano.keys.get("f")).start();
-        if (e.getKeyCode() == KeyEvent.VK_G) new Piano(Piano.keys.get("g")).start();
+        if (e.getKeyCode() == KeyEvent.VK_A) new Piano(Keys.get("a")).start();
+        if (e.getKeyCode() == KeyEvent.VK_B) new Piano(Keys.get("b")).start();
+        if (e.getKeyCode() == KeyEvent.VK_C) new Piano(Keys.get("c")).start();
+        if (e.getKeyCode() == KeyEvent.VK_D) new Piano(Keys.get("d")).start();
+        if (e.getKeyCode() == KeyEvent.VK_E) new Piano(Keys.get("e")).start();
+        if (e.getKeyCode() == KeyEvent.VK_F) new Piano(Keys.get("f")).start();
+        if (e.getKeyCode() == KeyEvent.VK_G) new Piano(Keys.get("g")).start();
 
     }
 
