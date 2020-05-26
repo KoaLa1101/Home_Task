@@ -71,7 +71,7 @@ public class Main {
                 }
             }
 
-            if(line[0].equals("copy")) {
+            if (line[0].equals("copy")) {
                 if (line.length > 1) {
                     ArrayList<String> fromTo = new ArrayList<>();
                     String param = line[1].trim().toLowerCase();
