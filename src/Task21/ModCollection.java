@@ -69,7 +69,7 @@ public class ModCollection<T> extends AbstractCollection {
     }
 
     public T get(T i){
-        return arr[(int) i];
+        return arr[(Integer) i];
     }
 
     public void sout() {
