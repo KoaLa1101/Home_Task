@@ -16,7 +16,7 @@ public class Task6_2 {
         int size = 1;
 
         while(size< arr.length){
-            for (int i=0;i< arr.length; i+=(2*size)) { // "i+=2*size" to make a couple
+            for (int i=0;i< arr.length; i+=(2*size)) { // "i+=2*size" to make the arrays
                 mergeArr(src,i, src, i+size, res, i, size);
             }
             size*=2;
