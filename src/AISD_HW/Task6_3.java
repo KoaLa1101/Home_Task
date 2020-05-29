@@ -3,7 +3,7 @@ package AISD_HW;
 public class Task6_3 {
 
     public static void main(String[] args) {
-        System.out.println(multiplyKar(23,42));
+        System.out.println(multiplyKar(23,142));
     }
     private static long multiplyKar(long a, long b){
         if(a<10||b<10)
